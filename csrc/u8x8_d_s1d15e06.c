@@ -77,11 +77,11 @@ uint8_t u8x8_d_s1d15e06_common(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void 
       x = ((u8x8_tile_t *)arg_ptr)->x_pos;
       x *= 8;
 
-	  u8x8_cad_SendCmd(u8x8, 0xB1);	//Page Address - Row
-	  u8x8_cad_SendArg(u8x8, (((u8x8_tile_t *)arg_ptr)->y_pos));
-
       y = ((u8x8_tile_t *)arg_ptr)->y_pos;
       y += u8x8->x_offset;
+
+	  u8x8_cad_SendCmd(u8x8, 0xB1);	//Page Address - Row
+	  u8x8_cad_SendArg(u8x8, y);
 
       u8x8_cad_SendCmd(u8x8, 0x13);	/* col */
       u8x8_cad_SendArg(u8x8, x);

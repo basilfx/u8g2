@@ -455,21 +455,21 @@ uint8_t u8x8_d_st7302_122x250(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
       break;
 #endif
     case U8X8_MSG_DISPLAY_DRAW_TILE:
-      x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
+      x = ((u8x8_tile_t *)arg_ptr)->x_pos;
       x *= 8;
       x += u8x8->x_offset;
       y= (((u8x8_tile_t *)arg_ptr)->y_pos);
       y*=4;
-    
+
       y+=115;           // specific for the 122x250 LCD
 
       u8x8_cad_StartTransfer(u8x8);
 
       for( i = 0; i < 4; i++ )
       {
-        
+
         u8x8_cad_SendCmd(u8x8, 0x2a);
-        u8x8_cad_SendArg(u8x8, 0x19);   // specific for the 122x250 LCD
+        u8x8_cad_SendArg(u8x8, 0x19 + x);   // specific for the 122x250 LCD
         u8x8_cad_SendArg(u8x8, 0x3a );
       
         u8x8_cad_SendCmd(u8x8, 0x2b ); 
