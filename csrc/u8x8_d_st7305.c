@@ -276,7 +276,6 @@ static const u8x8_display_info_t u8x8_st7305_122x250_display_info =
 
 uint8_t u8x8_d_st7305_122x250(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
 {
-  uint16_t x;
   uint8_t c, i, y;
   uint8_t *ptr;
   switch(msg)
@@ -316,9 +315,6 @@ uint8_t u8x8_d_st7305_122x250(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
       break;
 #endif
     case U8X8_MSG_DISPLAY_DRAW_TILE:
-      x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
-      x *= 8;
-      x += u8x8->x_offset;
       y= (((u8x8_tile_t *)arg_ptr)->y_pos);
       y*=4;
     
@@ -392,7 +388,6 @@ static const u8x8_display_info_t u8x8_st7305_200x200_display_info =
 
 uint8_t u8x8_d_st7305_200x200(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
 {
-  uint16_t x;
   uint8_t c, i, y;
   uint8_t *ptr;
   switch(msg)
@@ -432,9 +427,6 @@ uint8_t u8x8_d_st7305_200x200(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
       break;
 #endif
     case U8X8_MSG_DISPLAY_DRAW_TILE:
-      x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
-      x *= 8;
-      x += u8x8->x_offset;
       y= (((u8x8_tile_t *)arg_ptr)->y_pos);
       y*=4;
     
@@ -606,7 +598,6 @@ static const u8x8_display_info_t u8x8_st7305_168x384_display_info =
 
 uint8_t u8x8_d_st7305_168x384(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
 {
-  uint16_t x;
   uint8_t c, i, y;
   uint8_t *ptr;
   switch(msg)
@@ -646,9 +637,6 @@ uint8_t u8x8_d_st7305_168x384(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
       break;
 #endif
     case U8X8_MSG_DISPLAY_DRAW_TILE:
-      x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
-      x *= 8;
-      x += u8x8->x_offset;
       y= (((u8x8_tile_t *)arg_ptr)->y_pos);
       y*=4;
     
